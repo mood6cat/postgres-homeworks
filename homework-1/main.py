@@ -20,9 +20,7 @@
 import psycopg2
 import pandas
 import os
-
-
-
+from psycopg2 import extensions
 
 def build_path(file: str) -> str:
     """
@@ -64,7 +62,7 @@ if __name__ == '__main__':
             host='localhost',
             database='north',
             user='postgres',
-            pasword='84627913'
+            password='84627913'
     ) as conn:
         with conn.cursor() as cur:
             add_data_to_table("customers", customers, cur)
